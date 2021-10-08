@@ -52,40 +52,45 @@ function imc(){
    let altura = document.getElementById("altura").value;
    let peso = document.getElementById("peso").value;
    
-   let valor = (peso / (altura * altura)).toFixed(1);
-   let peso1 = ((altura * altura)*18.5).toFixed(1);
-   let peso2 = ((altura * altura)* 25).toFixed(1);
-   
-   /*
-   console.log(nome);
-   console.log(altura);
-   console.log(peso);
-   console.log(valor);
-    */
+   if( nome != "" && altura != "" && peso != ""){
 
-   let final;
+       let valor = (peso / (altura * altura)).toFixed(1);
+       let peso1 = ((altura * altura)*18.5).toFixed(1);
+       let peso2 = ((altura * altura)* 25).toFixed(1);
 
-   if(valor < 18.5){
-     final = "Isso significa que voce está embaixo do peso";
-   }else if(valor >= 18.5 && valor <= 24.9)
-   {
-     final = "Que corresponde a um Peso Normal";
-   }else if(valor >= 25 && valor <= 29.9)
-   {
-     final = "Que corresponde a Sobrepeso";
-   }else if(valor >= 30 && valor <= 34.9)
-   {
-     final = "Que corresponde a Obesidade Grau I";
-   }else if(valor >= 35 && valor <= 39.9)
-   {
-     final = "Que corresponde a Obesidade Grau II";
-   }else if(valor >= 40)
-   {
-     final = "Que corresponde a Obesidade Grau III";
+       /*
+       console.log(nome);
+       console.log(altura);
+       console.log(peso);
+       console.log(valor);
+        */
+
+       let final;
+
+       if(valor < 18.5){
+         final = "Isso significa que voce está embaixo do peso";
+       }else if(valor >= 18.5 && valor <= 24.9)
+       {
+         final = "Que corresponde a um Peso Normal";
+       }else if(valor >= 25 && valor <= 29.9)
+       {
+         final = "Que corresponde a Sobrepeso";
+       }else if(valor >= 30 && valor <= 34.9)
+       {
+         final = "Que corresponde a Obesidade Grau I";
+       }else if(valor >= 35 && valor <= 39.9)
+       {
+         final = "Que corresponde a Obesidade Grau II";
+       }else if(valor >= 40)
+       {
+         final = "Que corresponde a Obesidade Grau III";
+       }
+
+       var texto = "Senhor "+ nome +", ao calcular seu peso de: "+ peso + "Kg, e a altura de: "+ altura + "m, chegamos a conclusão de que seu IMC é de: "+ valor + "." + final + "!" +" Procure manter o seu peso entre "+peso1+"kg e "+peso2+"kg";
    }
-
-   var texto = "Senhor "+ nome +", ao calcular seu peso de: "+ peso + "Kg, e a altura de: "+ altura + "m, chegamos a conclusão de que seu IMC é de: "+ valor + "." + final + "!" +" Procure manter o seu peso entre "+peso1+"kg e "+peso2+"kg";
-
+    else{
+    var texto = "Voce precisa preencher os campos!"
+    }
    $('#texto').fadeIn(2000);
 
    document.getElementById("texto").innerHTML = texto;
