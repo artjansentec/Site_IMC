@@ -53,6 +53,8 @@ function imc(){
    let peso = document.getElementById("peso").value;
    
    let valor = (peso / (altura * altura)).toFixed(1);
+   let peso1 = ((altura * altura)*18.5).toFixed(1);
+   let peso2 = ((altura * altura)* 25).toFixed(1);
    
    /*
    console.log(nome);
@@ -82,7 +84,7 @@ function imc(){
      final = "Que corresponde a Obesidade Grau III";
    }
 
-   var texto = "Senhor "+ nome +", ao calcular seu peso de: "+ peso + "Kg, e a altura de: "+ altura + "m, chegamos a conclusão de que seu IMC é de: "+ valor + "." + final + "!";
+   var texto = "Senhor "+ nome +", ao calcular seu peso de: "+ peso + "Kg, e a altura de: "+ altura + "m, chegamos a conclusão de que seu IMC é de: "+ valor + "." + final + "!" +" Procure manter o seu peso entre "+peso1+"kg e "+peso2+"kg";
 
    $('#texto').fadeIn(2000);
 
